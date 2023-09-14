@@ -12,7 +12,7 @@ Quite contrary to the name of the repository, this repository contains docker fi
 
 Docker host machine
 
-- Ubuntu 20.04 or 22.04
+- Debian12
 
 Over-The-Air setups: 
 
@@ -35,7 +35,7 @@ RF simulated setups:
 #### Clone repository and build base docker image of open5gs, kamailio, ueransim
 
 ```
-git clone https://github.com/herlesupreeth/docker_open5gs
+git clone https://github.com/yousefElo/open5gs
 cd docker_open5gs/base
 docker build --no-cache --force-rm -t docker_open5gs .
 
