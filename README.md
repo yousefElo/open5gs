@@ -59,8 +59,8 @@ cd ..
 set -a
 source .env
 sudo ufw disable
-docker-compose -f 4g-volte-deploy.yaml build
-docker-compose -f sa-deploy.yaml build
+docker compose -f 4g-volte-deploy.yaml build
+docker compose -f sa-deploy.yaml build
 sudo sysctl -w net.ipv4.ip_forward=1
 sudo cpupower frequency-set -g performance
 ```
@@ -69,38 +69,38 @@ sudo cpupower frequency-set -g performance
 
 ```
 # 4G Core Network + IMS + SMS over SGs
-docker-compose -f 4g-volte-deploy.yaml up
+docker compose -f 4g-volte-deploy.yaml up
 
 # srsRAN eNB using SDR (OTA)
-docker-compose -f srsenb.yaml up -d && docker container attach srsenb
+docker compose -f srsenb.yaml up -d && docker container attach srsenb
 
 # srsRAN ZMQ eNB (RF simulated)
-docker-compose -f srsenb_zmq.yaml up -d && docker container attach srsenb_zmq
+docker compose -f srsenb_zmq.yaml up -d && docker container attach srsenb_zmq
 
 # srsRAN ZMQ 4G UE (RF simulated)
-docker-compose -f srsue_zmq.yaml up -d && docker container attach srsue_zmq
+docker compose -f srsue_zmq.yaml up -d && docker container attach srsue_zmq
 ```
 
 ###### 5G SA deployment
 
 ```
 # 5G Core Network
-docker-compose -f sa-deploy.yaml up
+docker compose -f sa-deploy.yaml up
 
 # srsRAN gNB using SDR (OTA)
-docker-compose -f srsgnb.yaml up -d && docker container attach srsgnb
+docker compose -f srsgnb.yaml up -d && docker container attach srsgnb
 
 # srsRAN ZMQ gNB (RF simulated)
-docker-compose -f srsgnb_zmq.yaml up -d && docker container attach srsgnb_zmq
+docker compose -f srsgnb_zmq.yaml up -d && docker container attach srsgnb_zmq
 
 # srsRAN ZMQ 5G UE (RF simulated)
-docker-compose -f srsue_5g_zmq.yaml up -d && docker container attach srsue_5g_zmq
+docker compose -f srsue_5g_zmq.yaml up -d && docker container attach srsue_5g_zmq
 
 # UERANSIM gNB (RF simulated)
-docker-compose -f nr-gnb.yaml up -d && docker container attach nr_gnb
+docker compose -f nr-gnb.yaml up -d && docker container attach nr_gnb
 
 # UERANSIM NR-UE (RF simulated)
-docker-compose -f nr-ue.yaml up -d && docker container attach nr_ue
+docker compose -f nr-ue.yaml up -d && docker container attach nr_ue
 ```
 
 ## Configuration
