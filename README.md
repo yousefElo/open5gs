@@ -58,7 +58,6 @@ docker build --no-cache --force-rm -t ueransim .
 cd ..
 set -a
 source .env
-sudo ufw disable
 docker compose -f 4g-volte-deploy.yaml build
 docker compose -f sa-deploy.yaml build
 sudo sysctl -w net.ipv4.ip_forward=1
