@@ -1,4 +1,4 @@
-# docker_open5gs
+# open5gs
 Quite contrary to the name of the repository, this repository contains docker files to deploy an Over-The-Air (OTA) or RF simulated 4G/5G network using following projects:
 - Core Network (4G/5G) - open5gs - https://github.com/open5gs/open5gs
 - IMS (Only 4G supported i.e. VoLTE) - kamailio
@@ -36,20 +36,20 @@ RF simulated setups:
 
 ```
 git clone https://github.com/yousefElo/open5gs
-cd docker_open5gs/base
-docker build --no-cache --force-rm -t docker_open5gs .
+cd open5gs/base
+docker build --no-cache --force-rm -t open5gs .
 
 cd ../ims_base
-docker build --no-cache --force-rm -t docker_kamailio .
+docker build --no-cache --force-rm -t kamailio .
 
 cd ../srslte
-docker build --no-cache --force-rm -t docker_srslte .
+docker build --no-cache --force-rm -t srslte .
 
 cd ../srsran
-docker build --no-cache --force-rm -t docker_srsran .
+docker build --no-cache --force-rm -t srsran .
 
 cd ../ueransim
-docker build --no-cache --force-rm -t docker_ueransim .
+docker build --no-cache --force-rm -t ueransim .
 ```
 
 #### Build and Run using docker-compose
