@@ -12,7 +12,7 @@ Quite contrary to the name of the repository, this repository contains docker fi
 
 Docker host machine
 
-- Ubuntu 20.04 or 22.04
+- Debian 12
 
 Over-The-Air setups: 
 
